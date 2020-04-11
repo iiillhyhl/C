@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+	clock_t a,b;
+	int answer;
+	
+	printf("10+21=");
+	
+	a = clock();
+	
+	scanf("%d",&answer);
+	
+	b = clock();
+	
+	printf("걸린시간 = %f초",(float)(b-a)/CLOCKS_PER_SEC);
+	
+	return 0;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+	time_t a;
+	a = time(NULL);
+	
+	while(1)
+	{
+		if(a+5 <= time(NULL))
+		{
+			break;
+		}
+	}
+	printf("Alarm!!\a\n");
+	
+	return 0;
+}

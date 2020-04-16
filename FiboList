@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int Fibo(int a)
+{
+	if( a == 1 || a == 2) return 1;
+	
+	int i,f,s,t,q;
+	i=a;
+	f=1;
+	s=1;
+	t=f+s;
+	
+	for(q=0; q<i-3; q++)
+	{
+		f=s;
+		s=t;
+		t=f+s;
+	}
+	return t;
+}
+void FiboList(int b)
+{
+	for(int x=1; x<=b; x++)
+	printf("%d ",Fibo(x));
+}
+int main()
+{
+	int y;
+	scanf("%d",&y);
+	FiboList(y);
+	
+	return 0;
+}

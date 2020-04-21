@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int randFromTo(int a, int b)
+{
+	srand(time(NULL));
+	
+	int result = rand()%10+1;
+
+	return result;
+}
+
+int main()
+{
+	int cd,ab; 
+	
+	cd = randFromTo(1,10);
+	
+	for(int i=1; i<=3; i++)
+	{	
+	scanf("%d",&ab);
+	
+	if(ab == cd)  {printf("정답!\n"); break;}
+	else  {printf("x\n");}
+	
+}
+	if(ab != cd) 
+	printf("정답은 %d",cd);
+	
+	return 0;
+}

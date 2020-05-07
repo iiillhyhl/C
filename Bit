@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	char a,b,c; 
+	
+	a = 'T'; 
+	b = 0b10000000;
+
+	for(int i=0; i<8; i++)
+	{	
+		c = a&b;	
+		if(c == 0)
+		{
+			printf("0");	b = b>>1;	 
+		}
+		else
+			printf("1");	b = b>>1;
+		
+}
+	return 0;
+}

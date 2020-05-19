@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int binary(int n)
+{
+	int a,b,c,i,q,count; 
+	count = 0;
+	int arr[100]={0,};
+
+	while(n!=0)
+	{
+	arr[count] = n%2;
+	count = count+1;
+
+	n = n/2;
+	}

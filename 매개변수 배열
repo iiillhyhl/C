@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int maxInAry(int ary[])
+{
+	for(int i=0; i<5; i++)
+	{
+		printf("%d ",ary[i]);
+	}
+		
+		int a,b,max;
+		a = ary[0];
+		b = ary[1];
+	
+		if(a>b)
+		{
+			max = a;
+		}
+		else
+		{
+			max = b;
+		}
+		
+		int k = 2;
+		for(k = 2; k<5; k++)
+		{
+			a = ary[k];
+			if(a>max)
+			{
+				max = a;
+			}
+			else
+			{
+				max = max;
+			}
+		}
+		printf("%d",max);
+	return 0;
+}
+
+
+
+int avglnAry(int ary[])
+{
+	for(int i=0; i<5; i++)
+	{
+		printf("%d ",ary[i]);
+	}
+	
+	float a,b; int k;
+	a = 0;
+	for(k = 0; k<5; k++)
+	{
+		a = a + ary[k];
+	}
+	a = a/k;
+	printf("%f",a);
+	
+	return 0;
+}		
+
+int main()
+{
+	int score[5] = {10,35,22,45,62};
+	
+	avglnAry(score);
+	
+	return 0;
+}

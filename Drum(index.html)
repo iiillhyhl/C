@@ -59,15 +59,24 @@
 
 <script>
 
-querySelector()
 
-.classList.add('playing');
 
-function playSound() {
+function playSound(e) {
+    const elem = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    console.log(elem);
+
+    const cl = document.querySelectorAll('');
+
+    [...cl].forEach()
+
+    if (elem.classList.contains('key')) {
+    elem.classList.add('key', 'playing');
+}
 
 }
 
 window.addEventListener('keydown',playSound);
+
 
 </script>
 

@@ -96,13 +96,21 @@
 <script>
     const inputs = document.querySelectorAll(`input[type="checkbox"]`);
     console.log(inputs);
-    let a,b;
+    let a,b,c;
+    c = false;
 
     inputs.forEach(function (input) {
       input.addEventListener('click', function (e) {
         if(e.shiftKey)
         console.log(a);
         a = this;
+        inputs.forEach(function(input){
+          if(input == a){
+            
+            c = true;
+            input.checked = true;
+          };
+        });
         });
       console.log(input);
     });

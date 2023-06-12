@@ -21,8 +21,7 @@ int main() {
 		printf("무기강화 게임\n\n");
         printf("무기레벨: %d\n", level);
         printf("성공확률: %.2f%%\n", probability);
-        printf("강화하시겠습니까?\n");
-        printf("1.네   2.아니요\n");
+        printf("1.강화   2.포기\n");
         scanf("%d", &isTry);
  
         switch (isTry) {

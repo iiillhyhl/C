@@ -40,12 +40,12 @@ int main() {
 	
 	if(choice==1 && level==0) {
 		gotoxy (10,7);
-		printf("프로그램이 없습니다. 프로그램을 먼저 구입해주세요!");
+		printf("프로그램을 먼저 구매해주세요!");
 		Sleep(3000);
 	}
 	else if(choice==3) {
 		gotoxy(10,7);
-		printf("얼마를 사용하시겠습니까? (숫자로 입력)    ");
+		printf("얼마를 사용하겠습니까? (숫자만)");
 		scanf("%d",&lottomoney);
 		if(lottomoney<=money) {
 			

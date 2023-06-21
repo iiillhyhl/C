@@ -14,7 +14,6 @@ int main() {
 	int choice = 0; //사용자의 행동 선택 
 	int random = rand()%100; //강화 확률(이 값이 probability값보다 작으면 성공, 크면 실패) 
 	int buypick = 0; //강화권 구매 선택 
-	int plus; 
 	int lottomoney; //복권 구매 돈 
 	int lottorand; //랜덤한 로또 확률 당첨 값 저장 
 	srand((unsigned int) time(NULL));
@@ -96,24 +95,10 @@ int main() {
 				srand((unsigned int) time(NULL));
 				random = rand()%100;
 				printf("강화에 성공하셨습니다!\n");
-			
-				if(plus==1) {
-					level= level+3;
-					probability = 100 - level;
-					printf("강화 등급이 3단계 올라갑니다\n");
-					plus=0;
-				} 
-				else if(plus==2) {
-					level= level+5;
-					probability = 100 - level;
-					printf("강화 등급이 5단계 올라갑니다\n");
-					plus=0;
-				} 
-				else {
+
 				level= level+1;
 				probability = 100 - level;
 				printf("강화 등급이 1단계 올라갑니다\n");
-				}
 			
 				getmoney=level*10;
 				money=money+getmoney;
@@ -128,9 +113,9 @@ int main() {
 				random = rand()%100;
 				printf("강화에 실패하였습니다...\n");
 
-				level= level-5; 
+				level= level-3; 
 				probability = 100 - level;
-				printf("강화 등급이 5단계 내려갑니다...");
+				printf("강화 등급이 3단계 내려갑니다...");
 				Sleep(2000);
 			}
 		}

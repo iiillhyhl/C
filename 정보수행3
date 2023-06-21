@@ -4,73 +4,74 @@
 #include <windows.h> 
 
 
-
 int main() {
-	int money = 1000;
-	int probability = 0;
-	int level = 0;
-	int sellingprice = 0; 
-	int choice = 0; 
-	int random = rand()%100;
-	int buypick = 100; 
+	
+	
+	int money = 1000; //보유 돈 
+	int probability = 0; //강화 성공 가능성 
+	int level = 0; //강화 등급 
+	int getmoney = 0; //강화 성공시 얻는 돈 
+	int choice = 0; //사용자의 행동 선택 
+	int random = rand()%100; //강화 확률(이 값이 probability값보다 작으면 성공, 크면 실패) 
+	int buypick = 0; //강화권 구매 선택 
 	int plus; 
-	int lottomoney;
-	int lottoper;
+	int lottomoney; //복권 구매 돈 
+	int lottorand; //랜덤한 로또 확률 당첨 값 저장 
 	srand((unsigned int) time(NULL));
 
 	
-	while(money!=1000000000000000) {	
+	while(money!=1000000000000) { //보유돈이 1조원일때;엔딩조건	
 	
 		system("cls");
-		printf("현재 돈 : %d원      현재 프로그램: %d 강\n",money,level);
-		printf("1. 강화하기(%d%%)   2. 프로그램 사기     3.복권\n",probability);
+		printf("현재 돈 : %d원      현재 강화권: %d 강\n",money,level);
+		printf("1. 강화하기(%d%%)   2. 강화권 사기     3.복권\n",probability);
 		printf("무엇을 하실건가요?     ");
 		scanf("%d", &choice);
 		system("cls");
 	
-		if(choice==1 && level==0) {
+		if(choice==1 && level==0) { //강화권이 보유중이지 않을때 알림 
 			printf("프로그램을 먼저 구매해주세요!");
-			Sleep(3000);
+			Sleep(2000);
 		}
 		
-		else if(choice==3) {
+		else if(choice==3) { //3번 로또를 선택했을때 실행 
 			printf("얼마를 사용하겠습니까? (숫자만)");
 			scanf("%d",&lottomoney);
 			
 			if(lottomoney<=money) {
 				srand((unsigned int) time(NULL));
-				lottoper=rand()%9;
+				lottorand=rand()%9;
 				srand((unsigned int) time(NULL));
 				
-				if(lottoper==6) {
+				if(lottorand==6) {
 					money=money-lottomoney;
 					printf("5배");
 					money=money+lottomoney*5;
-					Sleep(3000);
+					Sleep(2000);
 				}
-				else if(lottoper==9) {
+				else if(lottrand==9) {
 					money=money-lottomoney;
 					printf("10배");
 					money=money+lottomoney*10;
-					Sleep(3000);
+					Sleep(2000);
 				}
-				else if(lottoper==8) {
+				else if(lottrand==8) {
 					money=money-lottomoney;
 					printf("2배");
 					money=money+lottomoney*2;
-					Sleep(3000);
+					Sleep(2000);
 				}
-				else if(lottoper==7) {
+				else if(lottorand==7) {
 					money=money-lottomoney;
 					printf("3배");
 					money=money+lottomoney*3;
-					Sleep(3000);
+					Sleep(2000);
 				}
 				else {
 					printf("0배");
 					money=money-lottomoney;
 					money=money+lottomoney*0;
-					Sleep(3000);
+					Sleep(2000);
 				}
 			}
 			
@@ -80,13 +81,13 @@ int main() {
 			}
 		}
 	
-		else if(choice==20060317) {
+		else if(choice==20060317) { //이스터에그 
 			printf("이스터에그! 30000원 추가");
 			Sleep(2000);
 			money=money+30000;
 		}
 
-		else if(choice==1 && level!=0) {
+		else if(choice==1 && level!=0) { //1번 강화를 선택했을때 실행 
 			
 			if(random<=probability) {
 				printf("강화중");
@@ -114,9 +115,9 @@ int main() {
 				printf("강화 등급이 1단계 올라갑니다\n");
 				}
 			
-				sellingprice=level*10;
-				money=money+sellingprice;
-				printf("%d원을 획득하셨습니다.",sellingprice); 
+				getmoney=level*10;
+				money=money+getmoney;
+				printf("%d원을 획득하셨습니다.",getmoney); 
 				Sleep(2000);
 			}
 			else {
@@ -134,20 +135,19 @@ int main() {
 			}
 		}
 
-		else if(choice==2) {
+		else if(choice==2) { //2번 강화권 구매를 선택했을때 실행 
 
 			printf("0. 나가기\n");
-			printf("1. 1강 프로그램 사기(100원)\n");
-			printf("2. 10강프로그램 사기(300원)\n");
-			printf("3. 20강 프로그램 사기(1000원)\n");
-			printf("4. 30강 프로그램 사기(3000원)\n");
+			printf("1. 1강강화권 사기(100원)\n");
+			printf("2. 10강강화권 사기(300원)\n");
+			printf("3. 20강 강화권 사기(1000원)\n");
+			printf("4. 30강 강화권 사기(3000원)\n");
 			printf("무엇을 구매할까요?    ");
 			scanf("%d",&buypick);
-			Sleep(500);
 			system("cls");
 			
 			if(buypick==1&&money>=100) {	
-				printf("1강 프로그램을 구매하였습니다.\n");
+				printf("1강 강화권을 구매하였습니다.\n");
 				Sleep(2000);
 				money=money-100;
 				level=1;
@@ -157,21 +157,21 @@ int main() {
 
 			}
 			else if(buypick==2&&money>=300) {
-				printf("10강 프로그램을 구매하였습니다.\n");
+				printf("10강 강화권을 구매하였습니다.\n");
 				Sleep(2000);
 				money=money-300;
 				level=10;
 				probability = 100 - level;
 			}
 			else if(buypick==4&&money>=3000) {
-				printf("30강 프로그램을 구매하였습니다.\n");
+				printf("30강 강화권을 구매하였습니다.\n");
 				Sleep(2000);
 				money=money-3000;
 				level=30;
 				probability = 100 - level;
 			}
 			else if(buypick==3&&money>=1000) {
-				printf("20강 프로그램을 구매하였습니다.\n");
+				printf("20강 강화권을 구매하였습니다.\n");
 				Sleep(2000);
 				money=money-1000;
 				level=20;
@@ -182,12 +182,15 @@ int main() {
 				Sleep(2000);
 			}
 		}
-		else {
+		
+		else { //1,2,3번 선택지 외 다른 선택을 하였을때 
 		printf("다시 선택해 주세요");
-		Sleep(3000);
+		Sleep(2000);
 		}		
 		
 	}
-	printf("승리하셨습니다."); 
+	
+	printf("부자가 되었습니다!!"); //게임 엔딩
+	 
 	return 0;
 }

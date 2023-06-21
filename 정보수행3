@@ -48,13 +48,13 @@ int main() {
 					money=money+lottomoney*5;
 					Sleep(2000);
 				}
-				else if(lottrand==9) {
+				else if(lottorand==9) {
 					money=money-lottomoney;
 					printf("10배");
 					money=money+lottomoney*10;
 					Sleep(2000);
 				}
-				else if(lottrand==8) {
+				else if(lottorand==8) {
 					money=money-lottomoney;
 					printf("2배");
 					money=money+lottomoney*2;
